@@ -11,49 +11,63 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
+@Entity
+@Table(name = "productsdefaultprice")
+public class ProductDefaultPrice {
 
-public class Product {
+	@Id	
+	@Column(name = "product_id")
+	private Long productId;
 
-	private Long id;
+	@Column(name = "name", nullable = false, unique = true)
 	private String name;
-	private String description;
-	private Integer quantity;
+    	
+
+	@Column(name = "price", nullable = false)
 	private Double price;
-	public Long getId() {
-		return id;
+
+	@Column(name = "description")
+	private String description;
+	
+	public Long getProductId() {
+		return productId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public Integer getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
+
+	
+
 	public Double getPrice() {
 		return price;
 	}
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 	
 	
 
